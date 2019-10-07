@@ -1,7 +1,7 @@
 /* The sidebar menu */
 .sidenav {
   height: 100%; /* Full-height: remove this if you want "auto" height */
-  width: 25%; /* Set the width of the sidebar */
+  width: 0; /* Set the width of the sidebar */
   position: fixed; /* Fixed Sidebar (stay in place on scroll) */
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
@@ -19,7 +19,7 @@
   text-decoration: none;
   font-size: 18px;
   color: #000000;
-  display: block;
+  display:;
 }
 
 /* When you mouse over the navigation links, change their color */
@@ -30,12 +30,12 @@
 
 /* Style page content */
 .main {
-  margin-left: 160px; /* Same as the width of the sidebar */
+  margin-left: 175px; /* Same as the width of the sidebar */
   padding: 0px 10px;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-@media only screen and (max-height: 800px) {
+@media only screen and (max-height: 450px) {
   .sidenav {padding-top: 4px;}
   .sidenav a {font-size: 10px;}
 }
@@ -45,7 +45,7 @@ border: solid;
 text-align: center;
 border-radius: 12px;
 color: #111;
-width: 25%px;
+width: 100%;
 margin-left: auto;
 margin-right: auto;
 }
@@ -75,4 +75,56 @@ margin-right: auto;
     display: flex;
     width: 100%;
     align-items: stretch;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 50px;
+  color: #ce0000;
+}
+
+/* The button used to open the sidebar */
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 20px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #cac9c9;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
 }

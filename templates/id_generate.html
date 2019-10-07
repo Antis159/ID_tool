@@ -4,19 +4,22 @@
 {% block content%}
 <h1 class="alert text-white bg-dark">ID Generator</h1>
 <h5>
-<form method="get" class="box">
-    {{form|crispy}}
-    <input type="submit" class="smb_button" value="Generate!">
-</form>
+    <form method="get" class="box">
+        {{form|crispy}}
+        <input type="submit" class="smb_button" value="Generate!">
+    </form>
 </h5>
 {% if result %}
 <h5 class="mt-5">
     Valid ids:
 </h5>
-<ol class="box" style="height:100%;">
-    {% for r in result %}
-    <li>{{r}}</li>
-    {% endfor %}
-</ol>
+<div class="box">
+    <ol>
+        {% for r in result %}
+        <li>{{r}}</li>
+        {% endfor %}
+    </ol>
+</div>
+
 {% endif %}
 {% endblock %}

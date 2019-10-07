@@ -1,51 +1,6 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
-<!--
-<body>
-    <div id="sidebar" class="sidenav">
-        <a href="javascript:void(0)"
-           class="closebtn"
-           onclick="closeNav()">
-          ×
-      </a>
-        <a href="{% url 'home-page' %}">Home</a>
-        <a href="{% url 'upload-ids' %}">Validate ID(s)</a>
-        <a href="{%url 'generate-ids' %}">Generate valid ID(s)</a>
-    </div>
-
-    <div id="main">
-        <button class="openbtn"
-                onclick="openNav()">
-          SIDEBAR
-      </button>
-    </div>
-</body>
--->
-
-<div id="main", class="sidenav">
-    <button class="custom_btn">
-        <a href="{% url 'home-page' %}">Home</a>
-    </button>
-    <button class="custom_btn">
-        <a href="{% url 'upload-ids' %}">Validate ID(s)</a>
-    </button>
-    <button class="custom_btn">
-        <a href="{%url 'generate-ids' %}">Generate valid ID(s)</a>
-    </button>
-</div>
-
-<!--<button class="custom_btn">
-    <a href="{% url 'home-page' %}">Home</a>
-</button>
-<button class="custom_btn">
-    <a href="{% url 'upload-ids' %}">Validate ID(s)</a>
-</button>
-<button class="custom_btn">
-    <a href="{%url 'generate-ids' %}">Generate valid ID(s)</a>
-</button>
--->
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -61,6 +16,26 @@
 
 </head>
 <body>
+<button class="openbtn" onclick="openNav()">&#9776;</button>
+<h2></h2>
+<div id="mySidebar" , class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="{% url 'home-page' %}">Home</a>
+    <a href="{% url 'upload-ids' %}">Validate ID(s)</a>
+    <a href="{%url 'generate-ids' %}">Generate valid ID(s)</a>
+
+</div>
+<script>
+    function openNav() {
+      document.getElementById("mySidebar").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+    }
+    function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+      document.getElementById("main").style.marginLeft = "0";
+    }
+
+</script>
 <div class="container">
     {% block content %}
     {% endblock %}
