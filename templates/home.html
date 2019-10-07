@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content%}
+<h1 class="alert text-white bg-dark">ID tools</h1>
+<h3>Select an option: </h3>
+<div class="form-group">
+    <button class="btn btn-dark">
+        <a href="{% url 'upload-ids' %}" class="text-white">Validate ID(s)</a>
+    </button>
+
+    <button type=button" class="btn btn-dark">
+        <a href="{%url 'generate-ids' %}" class="text-white">Generate valid ID(s)</a>
+    </button>
+</div>
+
+{% endblock %}

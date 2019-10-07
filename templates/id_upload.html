@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content%}
+<h1 class="alert text-white bg-dark">ID Validator</h1>
+<h5>
+    <div class="box">
+        <form method="post">
+            <div class="form-group">
+
+
+                {% csrf_token %}
+                {{form|crispy}}
+            </div>
+            <input type="submit" class="smb_button" value="Validate!">
+
+
+        </form>
+    </div>
+</h5>
+{% if result %}
+<h5>
+    Valid ids:
+</h5>
+<div class="box">
+    <ol>
+        {% for r in result %}
+        <li>{{r}}</li>
+        {% endfor %}
+    </ol>
+</div>
+{% endif %}
+{% endblock %}
