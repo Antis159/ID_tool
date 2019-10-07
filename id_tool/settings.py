@@ -21,7 +21,7 @@ SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-with open('config.json', 'r') as config_file:
+with open(os.path.join(BASE_DIR, 'config.json'), 'r') as config_file:
     config = json.load(config_file)
 
 SECRET_KEY = config.get('SECRET_KEY', '$-z+nh*20ub5p28-sir9re=kjm$rlfdk1%0r9%9s7@dv@1dik_')
