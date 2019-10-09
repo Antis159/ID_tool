@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content%}
+<h1 class="alert text-white bg-dark">{{ purpose|default:'Login' }}</h1>
+<h5>
+    <form method="post" class="box">
+        {% csrf_token %}
+        {{form|crispy}}
+        <input type="submit" class="smb_button" value="Go!">
+    </form>
+</h5>
+
+
+
+{% endblock %}
