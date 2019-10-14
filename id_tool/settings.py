@@ -29,7 +29,7 @@ SECRET_KEY = config.get('SECRET_KEY', '$-z+nh*20ub5p28-sir9re=kjm$rlfdk1%0r9%9s7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config.get('DEBUG', True)
 
-ALLOWED_HOSTS = config.get('ALLOWED_HOSTS',['127.0.0.1', 'localhost', ])
+ALLOWED_HOSTS = config.get('ALLOWED_HOSTS', ['127.0.0.1', 'localhost', ])
 
 # Application definition
 
@@ -128,3 +128,6 @@ else:
     STATICFILES_DIRS = [
         os.path.join(BASE_DIR, 'static')]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+LOGIN_REDIRECT_URL = 'home-page'
+LOGIN_URL = 'login-page'

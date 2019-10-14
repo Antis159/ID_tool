@@ -8,3 +8,8 @@ class NewUserCreationForm(UserCreationForm):
         model = User
         fields = ("username", "email")
 
+
+class UserUpdateForm(UserChangeForm):
+    class Meta:
+        model = User
+        fields = ("username", "email")
